@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Edit Task</h2>
+  <form>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" [(ngModel)]="task.title" name="title" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" [(ngModel)]="task.descript" name="description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="dueDate">Due Date</label>
+      <input type="date"  class="form-control" id="dueDate" [(ngModel)]="task.due_date" name="dueDate">
+    </div>
+    <div class="form-group">
+      <label for="status">Status</label>
+      <input type="text" class="form-control" id="status" [(ngModel)]="task.status" name="status">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="saveChanges()">Save Changes</button>
+
+    <br/>
+    <p *ngIf="successMessage" class="text-success">{{ successMessage }}</p>
+
+  </form>
+</div>

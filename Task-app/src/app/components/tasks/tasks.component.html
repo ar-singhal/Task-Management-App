@@ -1,0 +1,49 @@
+
+<div  class="main">
+    
+    <div *ngFor="let task of tasks">
+        <h3>{{ task.title }}</h3>
+        <p>Description: {{ task.descript }}</p>
+        <p>Due Date: {{ task.due_date | date:'yyyy-MM-dd' }}</p>
+        <p>Status: {{ task.status }}</p>
+        <!-- <button class="primary" onclick="window.dialog.showModal();">Delete Task</button> -->
+        <button class="primary" (click)="deletetask(this.task)" >Delete Task</button>
+        <button class="primary" (click)="openEditDialog(task)">Edit Task</button>
+
+        <hr>
+    </div>
+</div>
+
+
+<dialog id="dialog" >
+	
+        <h2>Delete Task</h2>
+        <!-- <div>
+          <form>
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" id="title"  name="title">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea class="form-control" id="description"  name="description"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="dueDate">Due Date</label>
+              <input type="date" class="form-control" id="dueDate"  name="dueDate">
+            </div>
+            <div class="form-group">
+              <label for="status">Status</label>
+              <input type="text" class="form-control" id="status"  name="status">
+            </div>
+            <button type="button" class="btn btn-primary" >Save Changes</button>
+          </form>
+        </div> -->
+        <button (click)="delete('')" aria-label="delete" class="delete">Confirm to Delete</button>
+      
+	<button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+</dialog>
+
+
+
+
